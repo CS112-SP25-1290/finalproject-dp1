@@ -1,3 +1,5 @@
+https://docs.google.com/presentation/d/10QLem-FvxP4YuuniVW6cXjAO_EQVNtpJh8cYje8c4rM/edit?usp=sharing
+
 public class Workout extends FitnessRecord {
     private String type;
     private int duration;
