@@ -1,19 +1,28 @@
 package edu.miracosta.cs112.finalproject.finalproject;
 
-/**
- * Cardio workout extending WorkoutPlan.
- */
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class CardioWorkout extends WorkoutPlan {
-    public CardioWorkout() {
-        super("Cardio Training", 40, 600);
+    private ArrayList<String> exercises;
+
+    public CardioWorkout(String name, int duration, int caloriesBurned, String[] exercises) {
+        super(name, duration, caloriesBurned);
+        this.exercises = new ArrayList<>(Arrays.asList(exercises));
     }
 
-    public CardioWorkout(String name, int duration, int caloriesBurned) {
-        super(name, duration, caloriesBurned);
+    @Override
+    public ArrayList<String> getExercises() {
+        return exercises;
     }
 
     @Override
     public String getWorkoutType() {
-        return "Cardio Training - Includes sprint intervals, cycling, jump rope, and burpees.";
+        return "Cardio Training - Includes exercises like: " + String.join(", ", exercises);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nExercises: " + String.join(", ", exercises);
     }
 }
